@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Gen Yamaguchi - Home </title>
+    <link rel="stylesheet" type="text/css" href="Index.css">
+    <link rel="shortcut icon" href="Photos/favicon.ico" type="image/x-icon">
+
+    <meta name="author" content="Gen Yamaguchi Butler"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        .photo {
+            display: block;
+            max-width: 100%;
+            padding-top: 7rem;
+        }
+    </style>
+    <style>
+        .home-titlemb {
+            margin-right: auto;
+            margin-left: auto; /* Center the .centered-name element */
+            max-width: 90%; /* Limit the width of the element */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="centered-name" style="color:rgb(50, 50, 50); line-height: 0.9;">GEN <br/> YAMAGUCHI</h1>
+    <div class="home-titlepc">
+        <a href="Index.html" style="color: rgb(40, 40, 40);">Home</a>
+    </div>    
+    <div class="home-titlemb"> <!--separate mobile home title (same code appears on other pages)-->
+        <a href="Index.html" style="color: rgb(40, 40, 40);">Home</a>
+    </div>
+    <div class="photo-container">
+        <img src="Photos/selfie.jpg" class="photo" alt="selfie">
+    </div>
+    <div class="menu-container">
+        <a class="anchor1" href="Index.html" style="color:rgb(50, 50, 50);">Home</a>
+        <a class="anchor1" href="About.html">About</a>
+        <a class="anchor1" href="Portfolio.html">Portfolio</a>
+        <a class="anchor1" href="Resume.html">Resume</a>
+        <a class="anchor1" href="Contact.html">Contact</a>
+    </div>
+    <div class="elevatorpitch">
+        <p>
+            Hello! My name is Gen Yamaguchi Butler, but in Japan, I go by 山口玄 (Yamaguchi Gen). <br><br>I am a photographer and am starting to learn code as can be seen through this website. Through my photography, I enjoy capturing a wide variety of styles, from candid street photography, to staged photos where my friends pose for the shots. I also enjoy landscape and scenery photography; I don't have a preference. <br><br>You won't be able to tell from seeing the website alone, but I'm sure that a lot of my code is highly inefficient and redundant. In the future, I hope to learn more about coding and discover my passion. <br><br>This life of discovery can be seen through one of my favorite mottos, "life is about seeing." The ability to acknowledge everything that is going on in life and appreciating it down to its core is what has shaped me today. Being present in the moment, and noticing your surroundings is not only important in photography, but in life. 
+    
+    I hope you enjoy this website!
+        </p>
+    </div>
+    <div class="elevatorpitchmb">
+        <p>
+            Hello! My name is Gen Yamaguchi Butler. <br> In Japan, I go by 山口玄 (Yamaguchi Gen). <br><br>I am a photographer and am starting to learn code as can be seen through this website. Through my photography, I enjoy capturing a wide variety of styles, from candid street photography, to staged photos where my friends pose for the shots. I also enjoy landscape and scenery photography; I don't have a preference. <br><br>You won't be able to tell from seeing the website alone, but I'm sure that a lot of my code is highly inefficient and redundant. In the future, I hope to learn more about coding and discover my passion. <br><br>This life of discovery can be seen through one of my favorite mottos, "life is about seeing." The ability to acknowledge everything that is going on in life and appreciating it down to its core is what has shaped me today. Being present in the moment, and noticing your surroundings is not only important in photography, but in life. 
+    
+    I hope you enjoy this website!
+        </p>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+        &#9776;
+    </div>
+    <div class="refresh">
+        <p>
+            please refresh the page if <br>any elements appear incorrectly
+        </p>
+    </div>
+    <script> /* script to show menu when the hamburger is clicked */
+        function toggleMenu() {
+        var menu = document.querySelector('.menu-container');
+        menu.classList.toggle('show-menu');
+    }
+    </script>
+    <script>
+        window.addEventListener('resize', function() {
+        var screenWidth = window.innerWidth;
+        var menu = document.querySelector('.menu-container');
+       
+        if (screenWidth > 768) {
+            menu.classList.add('show-menu');
+        } else {
+            menu.classList.remove('show-menu');
+        }
+    });
+    </script>
+    <script> /* On mobile, this script hides both the haburger menu and the menu container when scrolling. It reappears when you start scrolling back up. */
+        var lastScrollTop = 0;
+        var initialViewportWidth = window.innerWidth;
+
+        window.addEventListener('scroll', function() {
+            var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            var hamburger = document.querySelector('.hamburger');
+            var menu = document.querySelector('.menu-container');
+
+            if (window.innerWidth <= 768) { // Only execute for mobile screens
+                if (currentScroll > lastScrollTop) {
+                    // Downscroll code
+                    hamburger.style.display = 'none';
+                    menu.style.display = 'none';
+                } else {
+                    // Upscroll code
+                    hamburger.style.display = 'block';
+                    menu.style.display = 'block';
+                }
+
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+            }
+        });
+    </script>
+</body>
+</html>

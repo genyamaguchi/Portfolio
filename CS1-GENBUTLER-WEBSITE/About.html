@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Gen Yamaguchi - About </title>
+    <link rel="stylesheet" type="text/css" href="About.css">
+    <link rel="shortcut icon" href="Photos/favicon.ico" type="image/x-icon">
+
+    <meta name="author" content="Gen Yamaguchi Butler"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        .photo {
+            display: block;
+            max-width: 100%;
+            padding-top: 7rem;
+        }
+    </style>
+    <style>
+        .about-titlemb {
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="centered-name" style="color:rgb(50, 50, 50); line-height: 0.9;">GEN <br/> YAMAGUCHI</h1>
+    <div class="about-titlepc">
+        <a href="About.html" style="color: rgb(40, 40, 40);">About</a>
+    </div>    
+    <div class="about-titlemb">
+        <a href="About.html" style="color: rgb(40, 40, 40);">About</a>
+    </div>
+    <div class="photo-container">
+        <img src="Photos/kidphoto.jpeg" class="photo" alt="selfie">
+    </div>
+    <div class="menu-container">
+        <a class="anchor1" href="Index.html">Home</a>
+        <a class="anchor1" href="About.html" style="color:rgb(50, 50, 50);">About</a>
+        <a class="anchor1" href="Portfolio.html">Portfolio</a>
+        <a class="anchor1" href="Resume.html">Resume</a>
+        <a class="anchor1" href="Contact.html">Contact</a>
+    </div>
+    <div class="aboutme">
+        <p>
+            This is a photo of me as a Kid :) <br><br> As mentioned on the home page, I am Japanese. 76% to be exact. I grew up in both Japan and San Francisco.<br><br> I currently attend The Bay School of San Francisco. I have been doing photography since the start of the pandemic, back in 2020. My coding experience is far less. As of 4/28/2024, I have around two weeks of website coding experience. <br><br> My father is my inspiration for photography. Because of him, I've learned to seize the moment. Credits to him for taking this photo above!
+        </p>
+    </div>
+    <div class="aboutmemb">
+        <p>
+            This is a photo of me as a Kid :) <br><br> As mentioned on the home page, I am Japanese. 76% to be exact. I grew up in both Japan and San Francisco.<br><br> I currently attend The Bay School of San Francisco. I have been doing photography since the start of the pandemic, back in 2020. My coding experience is far less. As of 4/28/2024, I have around two weeks of website coding experience. <br><br> My father is my inspiration for photography. Because of him, I've learned to seize the moment. Credits to him for taking this photo above!
+        </p>
+    </div>
+    
+    <div class="hamburger" onclick="toggleMenu()">
+        &#9776;
+    </div>
+    <div class="refresh">
+        <p>
+            please refresh the page if <br>any elements appear incorrectly
+        </p>
+    </div>
+    <script> /* script to show menu when the hamburger is clicked */
+        function toggleMenu() {
+        var menu = document.querySelector('.menu-container');
+        menu.classList.toggle('show-menu');
+    }
+    </script>
+    <script>
+        window.addEventListener('resize', function() {
+        var screenWidth = window.innerWidth;
+        var menu = document.querySelector('.menu-container');
+       
+        if (screenWidth > 768) {
+            menu.classList.add('show-menu');
+        } else {
+            menu.classList.remove('show-menu');
+        }
+    });
+    </script>
+    <script> /* On mobile, this script hides both the haburger menu and the menu container when scrolling. It reappears when you start scrolling back up. */
+        var lastScrollTop = 0;
+        var initialViewportWidth = window.innerWidth;
+
+        window.addEventListener('scroll', function() {
+            var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            var hamburger = document.querySelector('.hamburger');
+            var menu = document.querySelector('.menu-container');
+
+            if (window.innerWidth <= 768) { // Only execute for mobile screens
+                if (currentScroll > lastScrollTop) {
+                    // Downscroll code
+                    hamburger.style.display = 'none';
+                    menu.style.display = 'none';
+                } else {
+                    // Upscroll code
+                    hamburger.style.display = 'block';
+                    menu.style.display = 'block';
+                }
+
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Gen Yamaguchi - Resume </title>
+    <link rel="stylesheet" type="text/css" href="Resume.css">
+    <link rel="shortcut icon" href="Photos/favicon.ico" type="image/x-icon">
+
+    <meta name="author" content="Gen Yamaguchi Butler"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        .photo {
+            display: block;
+            max-width: 100%;
+            padding-top: 7rem;
+        }
+    </style>
+    <style>
+        .resume-titlemb {
+            margin-right: auto;
+            margin-left: auto; /* Center the .centered-name element */
+            max-width: 90%; /* Limit the width of the element */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="centered-name" style="color:rgb(50, 50, 50); line-height: 0.9;">GEN <br/> YAMAGUCHI</h1>
+    <div class="resume-titlepc">
+        <a href="Resume.html" style="color: rgb(40, 40, 40);">Resume</a>
+    </div>    
+    <div class="resume-titlemb">
+        <a href="Resume.html" style="color: rgb(40, 40, 40);">Resume</a>
+    </div>
+    <div class="photo-container">
+        <img src="Photos/resume.png" class="photo" alt="resume">
+    </div>
+    <div class="menu-container">
+        <a class="anchor1" href="Index.html">Home</a>
+        <a class="anchor1" href="About.html">About</a>
+        <a class="anchor1" href="Portfolio.html">Portfolio</a>
+        <a class="anchor1" href="Resume.html" style="color:rgb(50, 50, 50);">Resume</a>
+        <a class="anchor1" href="Contact.html">Contact</a>
+    </div>
+    <div class="resumedlpc">
+            <a href="https://drive.google.com/file/d/1uXLshKPK_DqZtRqF7Ecr8jQyPbgRcRts/view?usp=sharing" style="color: rgb(40, 40, 40);" download target="_blank">Download Resume</a>
+    </div>
+    <div class="resumedlmb">
+        <a href="https://drive.google.com/file/d/1uXLshKPK_DqZtRqF7Ecr8jQyPbgRcRts/view?usp=sharing" style="color: rgb(40, 40, 40);" download target="_blank">Download Resume</a>
+    </div>
+    
+    <div class="hamburger" onclick="toggleMenu()">
+        &#9776;
+    </div>
+    <div class="refresh">
+        <p>
+            please refresh the page if <br>any elements appear incorrectly
+        </p>
+    </div>
+    <script> /* script to show menu when the hamburger is clicked */
+        function toggleMenu() {
+        var menu = document.querySelector('.menu-container');
+        menu.classList.toggle('show-menu');
+    }
+    </script>
+    <script>
+        window.addEventListener('resize', function() {
+        var screenWidth = window.innerWidth;
+        var menu = document.querySelector('.menu-container');
+       
+        if (screenWidth > 768) {
+            menu.classList.add('show-menu');
+        } else {
+            menu.classList.remove('show-menu');
+        }
+    });
+    </script>
+    <script> /* On mobile, this script hides both the haburger menu and the menu container when scrolling. It reappears when you start scrolling back up. */
+        var lastScrollTop = 0;
+        var initialViewportWidth = window.innerWidth;
+
+        window.addEventListener('scroll', function() {
+            var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            var hamburger = document.querySelector('.hamburger');
+            var menu = document.querySelector('.menu-container');
+
+            if (window.innerWidth <= 768) { // Only execute for mobile screens
+                if (currentScroll > lastScrollTop) {
+                    // Downscroll code
+                    hamburger.style.display = 'none';
+                    menu.style.display = 'none';
+                } else {
+                    // Upscroll code
+                    hamburger.style.display = 'block';
+                    menu.style.display = 'block';
+                }
+
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+            }
+        });
+    </script>
+</body>
+</html>

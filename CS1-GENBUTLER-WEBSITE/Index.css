@@ -1,0 +1,231 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url(Fonts/Poppins-Light.ttf);
+}
+* {
+    font-family: 'Poppins';
+}
+h1 {
+    font-size: 40px;
+}
+body {
+    background-color:rgb(255, 255, 255);
+    opacity: 0; /* sets opacity to 0 to start the fade in effect */
+    animation: fadeInAnimation 1s ease forwards;
+    font-size: 20px;
+    padding-left: 1rem;
+}
+
+
+/* this is the custom format for links.
+the first one removes the underline from the link
+and makes all links rgb 153,153,153
+
+
+The second one changes the color of the link on hover*/
+a {
+    text-decoration: none;
+    color: rgb(153, 153, 153);
+}
+a:hover {
+    color:rgb(40, 40, 40)
+}
+
+
+/* animation for fade in */
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*image positioning*/
+.image-container {
+    position: fixed;
+    top: 25%;
+    right: 10px;
+    transform: translateY(-25%);
+    padding-right: 75px;
+}
+
+
+.image-container img {
+    width: 200px;
+    height: auto;
+}
+
+
+.centered-name {
+    text-align: center;
+    margin-right: 70vw;
+    margin-left: auto;
+}
+
+.anchor1 {
+    text-align: center;
+    display: block;
+    margin-right: 70vw;
+}
+
+.anchor1:hover {
+    color: rgb(40, 40, 40); /* Original hover color */
+}
+
+.home-titlepc {
+    text-align: center;
+    margin-left: 15vw;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.elevatorpitch {
+    color: rgb(153, 153, 153);
+}
+
+.elevatorpitchmb {
+    color: rgb(153, 153, 153);
+}
+
+@media only screen and (min-width: 769px) { /* for screens larger than mobile*/
+    .home-titlemb {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+    .photo-container {
+        position: absolute;
+        top: 0;
+        margin-top: 55px;
+        margin-left: 25vw;
+        margin-right: 10vw;
+        padding-bottom: 2vh;
+    }
+    .elevatorpitch {
+        text-align: center;
+        position: absolute;
+        margin-top: 160vh;
+        margin-left: 25vw;
+        margin-right: 10vw;
+        padding-bottom: 6vh;
+    }
+    .elevatorpitchmb {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) { /* for mobile screens */
+    .home-titlepc {
+        display: none;
+    }
+    .home-titlemb {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .centered-name {
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 90%;
+        font-size: 2rem;
+    }
+    .anchor1 {
+        margin-right: 14px;
+        text-align: right;
+        font-size: 1rem;
+    }
+    .dropdown-container {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+    .photo-container {
+        position: absolute;
+        top: 6vh;
+        margin-left: 20vw;
+        margin-right: 20vw;
+        padding-bottom: 2vh;
+    }
+    .elevatorpitch {
+        display: none;
+    }
+    .elevatorpitchmb {
+        text-align: center;
+        padding-top: 72vh;
+        font-size: 10px;
+        margin-left: 20vw;
+        margin-right: 20vw;
+        padding-bottom: 4vh;
+    }
+    .refresh {
+        display: none;
+    }
+}
+
+.hamburger {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+    font-size: 4rem;
+    color: rgb(72, 72, 72);
+}
+
+.hamburger:hover {
+    color: rgb(40, 40, 40); /* Combined with previous hover color */
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    animation: fadeInAnimation 1s ease forwards;
+}
+
+.dropdown-container a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .dropdown-container {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+    .menu-container {
+        display: none;
+        position: fixed;
+        top: 14vh;
+        right: 1.6vw;
+        bottom: 0;
+        width: 70%; /* Adjust the width as needed */
+        z-index: 998; /* Ensure it's below the hamburger icon */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+}
+
+.menu-container.show-menu {
+    display: block;
+}
+
+@media only screen and (max-width: 768px) {
+    .menu-container.show-menu {
+        display: block;
+    }
+}
+
+.refresh {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 10px;
+    color:rgb(153, 153, 153)
+}
